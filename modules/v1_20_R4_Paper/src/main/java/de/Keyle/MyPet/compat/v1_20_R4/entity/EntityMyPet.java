@@ -139,7 +139,7 @@ public abstract class EntityMyPet extends PathfinderMob implements MyPetMinecraf
 	// Needed for the MyPetFlyingMoveControl - Sometimes overwritten by specific pets
 	protected float maxTurn = 20;
 
-	private static final Field jump = ReflectionUtil.getField(LivingEntity.class, "bn");	//Jumping-Field
+	private static final Field jump = ReflectionUtil.getField(LivingEntity.class, "jumping");	//Jumping-Field
 
 	public EntityMyPet(Level world, MyPet myPet) {
 		super(((EntityRegistry) MyPetApi.getEntityRegistry()).getEntityType(myPet.getPetType()), world);

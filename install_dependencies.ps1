@@ -5,7 +5,7 @@ $1_16_R1_S = "https://cdn.getbukkit.org/spigot/spigot-1.16.1.jar"
 $1_16_R4_S = "https://cdn.getbukkit.org/spigot/spigot-1.16.5.jar"
 
 New-Item -ItemType Directory -Force -Path .\dl
-
+$ProgressPreference = 'SilentlyContinue'
 Invoke-WebRequest -Uri $1_8_R3_S -OutFile ".\dl\1_8_R3_S.jar"
 Invoke-WebRequest -Uri $1_9_R2_S -OutFile ".\dl\1_9_R2_S.jar"
 Invoke-WebRequest -Uri $1_12_R1_S -OutFile ".\dl\1_12_R1_S.jar"

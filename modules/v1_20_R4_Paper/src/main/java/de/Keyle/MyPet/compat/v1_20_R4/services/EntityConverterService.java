@@ -224,7 +224,7 @@ public class EntityConverterService extends de.Keyle.MyPet.api.util.service.type
                     }
                     if (villagerTag.containsKey("FoodLevel")) {
                         byte foodLevel = villagerTag.getAs("FoodLevel", TagByte.class).getByteData();
-                        ReflectionUtil.setFieldValue("ct", entityVillager, foodLevel);		// Field: foodLevel
+                        ReflectionUtil.setFieldValue("foodLevel", entityVillager, foodLevel);		// Field: foodLevel
                     }
                     if (villagerTag.containsKey("Gossips")) {
                         TagList inventoryTag = villagerTag.get("Gossips");
@@ -235,17 +235,17 @@ public class EntityConverterService extends de.Keyle.MyPet.api.util.service.type
                     }
                     if (villagerTag.containsKey("LastRestock")) {
                     	long lastRestock = villagerTag.getAs("LastRestock", TagLong.class).getLongData();
-                        ReflectionUtil.setFieldValue("cz", entityVillager, lastRestock);	//Field: lastRestock(Game)Time
+                        ReflectionUtil.setFieldValue("lastRestockGameTime", entityVillager, lastRestock);	//Field: lastRestock(Game)Time
                     }
                     if (villagerTag.containsKey("LastGossipDecay")) {
                         long lastGossipDecay = villagerTag.getAs("LastGossipDecay", TagLong.class).getLongData();
-                        ReflectionUtil.setFieldValue("cw", entityVillager, lastGossipDecay);	//Field: lastGossipDecayTime
+                        ReflectionUtil.setFieldValue("lastGossipDecayTime", entityVillager, lastGossipDecay);	//Field: lastGossipDecayTime
                     }
                     if (villagerTag.containsKey("RestocksToday")) {
                         int restocksToday = villagerTag.getAs("RestocksToday", TagInt.class).getIntData();
-                        ReflectionUtil.setFieldValue("cA", entityVillager, restocksToday);		//Field: numberOfRestocksToday or restocksToday
+                        ReflectionUtil.setFieldValue("numberOfRestocksToday", entityVillager, restocksToday);		//Field: numberOfRestocksToday or restocksToday
                     }
-                    ReflectionUtil.setFieldValue("cC", entityVillager, true); // Field: AssignProfessionWhenSpawned (natural?)
+                    ReflectionUtil.setFieldValue("assignProfessionWhenSpawned", entityVillager, true); // Field: AssignProfessionWhenSpawned (natural?)
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

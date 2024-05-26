@@ -43,7 +43,7 @@ public class CompatUtil {
     private Map<String, Integer> compareCache = new HashMap<>();
 
     public CompatUtil() {
-        Matcher regexMatcher = PACKAGE_VERSION_MATCHER.matcher("v1_20_R4");
+        Matcher regexMatcher = PACKAGE_VERSION_MATCHER.matcher(Bukkit.getServer().getClass().getCanonicalName());
         if (regexMatcher.find()) {
             internalVersion = regexMatcher.group(1);
         }
